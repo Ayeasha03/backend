@@ -15,7 +15,12 @@ app.get("/", (req, res) => {
 });
 
 dotenv.config();
-app.use(cors())
+app.use(cors({
+  origin: "https://ayeashacreations.io",
+  methods: ["POST"],  
+  allowedHeaders: ["Content-Type"]  
+}));
+
 app.use(bodyParser.json())
 
 connectDB()
